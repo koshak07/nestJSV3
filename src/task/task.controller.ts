@@ -18,8 +18,8 @@ export class TaskController {
         return this.testServise.getTaskById(id)
     }
     @Post('task')
-    createTask(@Body('task') task: string): ITask {
-        return this.testServise.createTask(task)
+    createTask(@Body() { task, tags }: any): ITask {
+        return this.testServise.createTask(task, tags)
     }
 
 }
